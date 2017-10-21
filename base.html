@@ -120,9 +120,9 @@ if (is_top_frame) { $('body').addClass('wm-top-page'); }
   {%- block content %}
     {% if page and page.meta.source %}
       <div class="source-links">
-      {% for filename in page.meta.source %}
-          <span class="label label-primary"><a href="{{ repo_url }}/edit/master/doc/{{ filename }}" target="_blank" style="color:#ffffff"><i class="fa fa-pencil"></i> Edit on GitHub</a></span>
-      {% endfor %}
+      {% if page.meta.source %}
+          <span class="label label-primary"><a href="{{ config.repo_url }}/edit/master/doc/{{ page.meta.source }}" target="_blank" style="color:#ffffff"><i class="fa fa-pencil"></i> Edit on GitHub</a></span>
+      {% endif %}
       </div>
     {% endif %}
 
